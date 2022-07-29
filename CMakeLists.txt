@@ -28,9 +28,15 @@ add_definitions(
 )
 
 # User playground
-add_executable(Raycast main.cpp
-        Player.cpp
-        Player.h)
+add_executable(Raycast src/main.cpp
+        src/Controller/Controller.cpp
+        src/Controller/Controller.h
+        src/Model/Model.cpp
+        src/Model/Model.h
+        src/Model/Player.cpp
+        src/Model/Player.h
+        src/View/View.h
+        src/View/View.cpp)
 
 target_link_libraries(Raycast
         ${ALL_LIBS}
