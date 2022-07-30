@@ -10,13 +10,17 @@
 
 class Controller {
 private:
-    Model model;
+    Model* model;
 public:
+    Controller();
+
     void move(bool forward);
     void rotate(bool left);
 
 
     bool checkWallCollision();
+
+    Model *getModel() const;
 };
 
 

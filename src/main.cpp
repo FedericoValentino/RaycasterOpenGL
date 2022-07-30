@@ -1,11 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<cmath>
 
-#include"GL/glew.h"
-#include"GLFW/glfw3.h"
+#include "View/View.h"
 
 int main()
 {
-
+    View* currentView = new View();
+    currentView->mainLoop();
 }

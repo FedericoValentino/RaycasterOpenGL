@@ -8,17 +8,20 @@
 
 class Player {
 private:
-    int posX;
-    int posY;
+    double posX;
+    double posY;
     double orientation;
+    double deltaTime;
 public:
     Player();
     void move(bool forward);
     void rotate(bool left);
 
-    int getPosX() const;
-    int getPosY() const;
+    double getPosX() const;
+    double getPosY() const;
     double getOrientation() const;
+
+    void setDeltaTime(double deltaTime);
 };
 
 

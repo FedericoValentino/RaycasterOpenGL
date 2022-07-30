@@ -5,35 +5,35 @@
 #include "Player.h"
 #include <cmath>
 
-#define MOVEMENT_AMOUNT 5
+#define MOVEMENT_AMOUNT 100
 #define PI 3.14159
 
 Player::Player() {
-    posX = 0;
-    posY = 0;
-    orientation = PI/2;
+    posX = 80;
+    posY = 80;
+    orientation = 0;
 }
 
 void Player::move(bool forward){
     if(forward) {
-        posX += std::cos(orientation) * 5;
-        posY += std::sin(orientation) * 5;
+        posX += std::cos(orientation) * MOVEMENT_AMOUNT * deltaTime;
+        posY -= std::sin(orientation) * MOVEMENT_AMOUNT * deltaTime;
     }
     else
     {
-        posX -= std::cos(orientation) * 5;
-        posY -= std::sin(orientation) * 5;
+        posX -= std::cos(orientation) * MOVEMENT_AMOUNT * deltaTime;
+        posY += std::sin(orientation) * MOVEMENT_AMOUNT * deltaTime;
     }
 }
 
 void Player::rotate(bool left){
     if(left)
     {
-        orientation+= 0.017;
+        orientation+= 2.5 * deltaTime;
     }
     else
     {
-        orientation+= 0.017;
+        orientation-= 2.5 * deltaTime;
     }
 
     if(orientation > 2*PI)
@@ -46,14 +46,18 @@ void Player::rotate(bool left){
     }
 }
 
-int Player::getPosX() const {
+double Player::getPosX() const {
     return posX;
 }
 
-int Player::getPosY() const {
+double Player::getPosY() const {
     return posY;
 }
 
 double Player::getOrientation() const {
     return orientation;
+}
+
+void Player::setDeltaTime(double deltaTime) {
+    Player::deltaTime = deltaTime;
 }
