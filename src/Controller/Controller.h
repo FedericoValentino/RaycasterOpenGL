@@ -18,7 +18,7 @@ public:
     void rotate(bool left);
 
 
-    bool checkWallCollision();
+    bool checkWallCollision(bool forward);
 
     Model *getModel() const;
 };

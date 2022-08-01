@@ -100,7 +100,7 @@ void Model::castRays() {
                 dof = MAPSIZE;
                 double currentAngle = FixAngle(player->getOrientation() - rayStartingAngle);
 
-                distV = std::sqrt(std::pow((rayX-pX), 2) + std::pow((rayX-pX), 2)) * std::cos(currentAngle);
+                distV = std::sqrt(std::pow((rayX-pX), 2) + std::pow((rayY-pY), 2)) * std::cos(currentAngle);
                 hitV = {rayX, rayY, distV};
             }
             else
@@ -149,7 +149,7 @@ void Model::castRays() {
                 dof = MAPSIZE;
                 double currentAngle = FixAngle(player->getOrientation() - rayStartingAngle);
 
-                distH = std::sqrt(std::pow((rayX-pX), 2) + std::pow((rayX-pX), 2)) * std::cos(currentAngle);
+                distH = std::sqrt(std::pow((rayX-pX), 2) + std::pow((rayY-pY), 2)) * std::cos(currentAngle);
                 hitH = {rayX, rayY, distH};
             }
             else
